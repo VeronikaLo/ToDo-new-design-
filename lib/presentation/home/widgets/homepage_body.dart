@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todo_app/presentation/home/widgets/todo_card.dart';
+//import 'package:todo_app/presentation/home/widgets/todo_card.dart';
 import 'package:todo_app/presentation/home/widgets/todo_item.dart';
 
+import '../../../application/auth/auth_bloc/auth_bloc.dart';
 import '../../../application/todo/observer/observer_bloc.dart';
 
 
@@ -30,7 +31,25 @@ class HomepageBody extends StatelessWidget {
             child: CustomScrollView(
               physics: const BouncingScrollPhysics(),
               slivers: 
-                [SliverPadding(
+                [ SliverAppBar(
+                  collapsedHeight: 70,
+                  expandedHeight: 280,
+                  backgroundColor: themeData.scaffoldBackgroundColor,
+                  pinned: true,
+                  flexibleSpace:  FlexibleSpaceBar(
+                    background: Image.asset('assets/scull.png'), //if image is too big - wrap it with Padding.only bootom..
+                    titlePadding:  const EdgeInsets.only(left: 20, bottom: 10),
+                    title: Row(children: [
+                      const Text('ToDos', textScaleFactor: 1.3,),
+                      const Spacer(),
+                      IconButton(
+                        onPressed:() {
+                            BlocProvider.of<AuthBloc>(context).add(SignOutPressedEvent());
+                            } ,
+                        icon: const Icon(Icons.exit_to_app),),
+                    ],)),
+                ),
+                  SliverPadding(
                   padding: const EdgeInsets.all(_spacing),
                   sliver: SliverGrid(
                     delegate: SliverChildBuilderDelegate((context, index) {
