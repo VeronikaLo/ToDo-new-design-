@@ -51,13 +51,14 @@ class HomePage extends StatelessWidget {
           }),
         ], 
         child: Scaffold(
-        appBar: AppBar(
+        /*appBar: AppBar(
           leading: IconButton(
             onPressed:() {
               BlocProvider.of<AuthBloc>(context).add(SignOutPressedEvent());
             } ,
             icon: const Icon(Icons.exit_to_app),),
           title: const Text('My  ToDos'), centerTitle: true,),
+          */
         body: const HomepageBody(),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Theme.of(context).colorScheme.tertiary,
