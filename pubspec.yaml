@@ -60,6 +60,10 @@ dev_dependencies:
   build_runner: ^2.3.2
   flutter_native_splash: ^2.2.13
 
+flutter_native_splash:
+  image: assets/scull_splash.png
+  color: "#263238"
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
