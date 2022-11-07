@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/injection.dart' as di;
 import 'package:todo_app/presentation/routes/router.gr.dart' as r;
-import 'package:todo_app/presentation/signup/signup_page.dart';
 
 import 'app_theme.dart';
 import 'application/auth/auth_bloc/auth_bloc.dart';

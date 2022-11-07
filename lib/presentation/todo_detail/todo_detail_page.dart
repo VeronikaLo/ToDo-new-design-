@@ -27,12 +27,12 @@ class TodoDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeData = Theme.of(context);
+    //final themeData = Theme.of(context);
     return BlocProvider(
       create: (context) =>
           sl<TodoformBloc>()..add(InitializeTodoDetailPage(todo: todo)),
       child: BlocConsumer<TodoformBloc, TodoformState>(
-        listenWhen: (p, c) => p.failureOrSuccessOption != c.failureOrSuccessOption , //liste only when we get changesn in failureOrSuccessOption 
+        listenWhen: (p, c) => p.failureOrSuccessOption != c.failureOrSuccessOption , //listen only when we get changesn in failureOrSuccessOption 
         listener: (context, state) {
           state.failureOrSuccessOption.fold(
             () => (){}, 

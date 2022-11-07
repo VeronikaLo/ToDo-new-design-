@@ -140,7 +140,7 @@ class SignUpForm extends StatelessWidget {
 
                   if (formkey.currentState!.validate()) {  // if validation ok --> BlocEvent is added
                     BlocProvider.of<SignupformBloc>(context).add(SignUpWithEmailAndPasswordPressed(email: _email , password: _password ));
-                    print('validated email');
+                    
 
                   } else {  // if validation is not ok --> BlocEvent with null values (in BlocEvent - strings as nullable type)
 
@@ -165,7 +165,7 @@ class SignUpForm extends StatelessWidget {
                     
                     if (formkey.currentState!.validate()) {  // if validation ok --> BlocEvent is added
                     BlocProvider.of<SignupformBloc>(context).add(RegisterWithEmailAndPasswordPressed(email: _email , password: _password ));
-                    print('validated password');
+                    
 
                   } else {  // if validation is not ok --> BlocEvent with null values (in BlocEvent - strings as nullable type)
 
